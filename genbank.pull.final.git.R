@@ -21,7 +21,7 @@
 # ###################################################################
 
 
-setwd("~/Documents/R/Genbank.R/git/")
+setwd("~/")
 
 #install.packages("rentrez")
 #install.packages("reutils")
