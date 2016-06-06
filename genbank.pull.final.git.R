@@ -76,7 +76,7 @@ else
     write(fetch.out, file=paste(query,"fetch.out.fasta"), append=TRUE) }
 
 #
-# if count > 50 and divisable by 50  (NOTE: almost works, losing 1 seq?)    
+# if count > 50 and divisable by 50   
 # 
    if ((count > 50) & (count%%50 == 0) & (count <= 2000)) {
     print("count is greater than 50 and divis by 50")
@@ -90,7 +90,7 @@ else
 else
 
 #
-# if count > 50 and NOT divisable by 50 (NOTE: almost works, losing 1 seq?)     
+# if count > 50 and NOT divisable by 50   
 # 
    if ((count > 50) & (count%%50 != 0) & (count < 2000))  {
    
