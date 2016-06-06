@@ -42,9 +42,6 @@ TAXA<-t(TAXA)
 #where b is the gene "18S[ALL]" or "rbcL[ALL]"
 
 fetch.gb<-function(a,b) {
-
-#TAXA<-read.table(a, sep='\t')
-#TAXA<-t(TAXA)  
   
 for(i in a)
   {
