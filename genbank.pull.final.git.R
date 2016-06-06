@@ -1,6 +1,6 @@
 #####################################################################
 #                                                                   #
-# Purpose:       Download genbank sequences in fasta format         #
+# Purpose:       Download genbank sequences in fasta format in R    #
 #                                                                   #
 # Author:        Susie Theorux                                      #
 # Contact:       susannat@sccwrp.org                                #
