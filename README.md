@@ -1,9 +1,6 @@
-# genbank.pull
-
 #####################################################################
 #                                                                   #
-# Purpose:       Download genbank sequences in fasta format         #  
-#                with a given list of taxa names                    #
+## Purpose:       Download genbank sequences in fasta format         #
 #                                                                   #
 # Author:        Susie Theorux                                      #
 # Contact:       susannat@sccwrp.org                                #
@@ -22,4 +19,3 @@
 #         fetch.gb(TAXA, "rbcL[ALL]")                               #
 #                                                                   #
 # ###################################################################
-
