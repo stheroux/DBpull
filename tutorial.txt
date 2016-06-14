@@ -1,0 +1,35 @@
+# How to use this tutorial 
+
+# 1. Download taxa file and .R script 
+# 2. Open .R file in Rstudio 
+# 3. edit working directory to point to folder including taxa file, also install package if not already
+# 4. "Source" .R file 
+# 5. run script: 
+# you can change the gene or search term to suit your needs: 
+
+# genbank.gb(TAXA, "18S[ALL]")
+# genbank.gb(TAXA, "rbcL[ALL]")
+
+# 6. Admire results! 
+
+# Other notes 
+
+# https://cran.r-project.org/web/packages/rentrez/rentrez.pdf
+# https://cran.r-project.org/web/packages/reutils/reutils.pdf
+
+# 1. You can search other databases (default is nuccore)
+# list dbs 
+entrez_dbs(config = NULL)
+entrez_db_summary(db, config = NULL)
+
+
+# 2. You can search multiple fields (default is [ALL]) 
+# list search fields 
+# entrez_db_searchable(db, config = NULL)
+entrez_db_searchable(nuccore, config = NULL)
+
+
+
+
+
+
