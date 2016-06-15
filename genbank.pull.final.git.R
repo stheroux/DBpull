@@ -17,6 +17,7 @@
 #         Source file                                               #
 #         fetch.gb(TAXA, "18S[ALL]")                                #
 #         fetch.gb(TAXA, "rbcL[ALL]")                               #
+#         fetch.gb(TAXA, "18S[TITL]")                               #
 #                                                                   #
 # ###################################################################
 
