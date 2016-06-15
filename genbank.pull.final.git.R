@@ -46,10 +46,10 @@ fetch.gb<-function(a,b) {
   
 for(i in a)
   {
-  query<-paste(i, "AND", b, "AND 200:1800[SLEN]")
+  query<-paste('"',i,'"', "AND", b, "AND 200:1800[SLEN]")
   query.num<-entrez_search(db="nuccore", query)
   count<-query.num$count
-  print(paste('"',i,'"', "count is", count))
+  print(paste(i, "count is", count))
 
 #  
 # if count < 1   
