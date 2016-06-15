@@ -7,7 +7,7 @@
 # Client:        SCCWRP                                             #
 #                                                                   #
 # Code created:  2016-6-01                                          #
-# Last updated:  2016-06-05                                         #
+# Last updated:  2016-06-15                                         #
 # Source:        github.com/stheroux/genbank.pull                   #
 #                                                                   #
 # Requires:       set working directory (setwd)                     #
