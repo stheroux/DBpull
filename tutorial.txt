@@ -9,6 +9,9 @@
 
 # genbank.gb(TAXA, "18S[ALL]")
 # genbank.gb(TAXA, "rbcL[ALL]")
+# genbank.gb(TAXA, "18S[TITL]")
+# genbank.gb(TAXA, "rbcL[TITL]")
+
 
 # 6. Admire results! 
 
