@@ -26,7 +26,7 @@ entrez_db_summary(db, config = NULL)
 # 2. You can search multiple fields (default is [ALL]) 
 # list search fields 
 # entrez_db_searchable(db, config = NULL)
-entrez_db_searchable(nuccore, config = NULL)
+entrez_db_searchable("nuccore", config = NULL)
 
 
 
