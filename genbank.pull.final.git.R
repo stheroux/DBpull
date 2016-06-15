@@ -113,9 +113,9 @@ else
 
 else 
   
-  if (count > 2000)  {
+  if (count > 1000)  {
     
-    print("count is greater than 2000, skip")
+    print("count is greater than 1000, skip")
     omit.taxa<-i
     write(omit.taxa, file="omit.taxa.txt", append=T)
     }
