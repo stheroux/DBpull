@@ -18,7 +18,7 @@
 #         fetch.gb(TAXA, "18S[ALL]")                                #
 #         fetch.gb(TAXA, "rbcL[ALL]")                               #
 #         fetch.gb(TAXA, "18S[TITL]")                               #
-#         fetch.gb(TAXA, "(18S[TITL] OR 16S[TITL])" #multi marker   #
+#         fetch.gb(TAXA, "(18S[TITL] OR 16S[TITL]))" #multi marker   #
 #                                                                   #
 # ###################################################################
 
