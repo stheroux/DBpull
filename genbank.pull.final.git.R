@@ -18,6 +18,7 @@
 #         fetch.gb(TAXA, "18S[ALL]")                                #
 #         fetch.gb(TAXA, "rbcL[ALL]")                               #
 #         fetch.gb(TAXA, "18S[TITL]")                               #
+#         fetch.gb(TAXA, "(18S[TITL] OR 16S[TITL])" #multi marker   #
 #                                                                   #
 # ###################################################################
 
@@ -122,5 +123,12 @@ else
   
 }}
     
-      
+  # optional quick summary of output
+  #zed<-read.table("no.ref.seq.taxa.txt", header=F, sep='\t')
+  #zed<-t(zed)
+  #perc.no.ref.seq<-(length(zed))/(length(TAXA))*100
+  #print(paste("percent no ref seq is", perc.no.ref.seq))
+  #write(perc.no.ref.seq, file="perc.no.ref.seq.txt")
+  
+  
   
