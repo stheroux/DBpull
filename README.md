@@ -6,16 +6,10 @@
 #### Client:        SCCWRP                                             
                                                                    
 #### Code created:  2016-6-01                                          
-#### Last updated:  2016-06-05                                         
-#### Source:        github.com/stheroux/genbank.pull                   
+#### Last updated:  2022-08-22                                         
+#### Source:        github.com/stheroux/DBpull                   
                                                                   
 #### Requires:       
 ######                  set working directory (setwd)                    
 ######                 "taxa.txt" tab-delim taxa name list in directory  
-
-#### Usage:  
-######         Edit setwd                                                
-######         Source file                                               
-######         fetch.gb(TAXA, "18S[ALL]")                                
-######         fetch.gb(TAXA, "rbcL[ALL]")                               
 
