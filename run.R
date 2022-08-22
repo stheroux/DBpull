@@ -1,5 +1,4 @@
 
-setwd("~/Documents/R/Genbank/bryophytes_2022/")
 
 library(tidyverse)
 library(bold)    # API interface to BOLD
@@ -54,7 +53,7 @@ out.bold<-foo
 write.csv(as.matrix(out.bold),"bold.csv" )
 
 
-# california only -------------
+# california only, not sure this is working  -------------
 
 out1<-list()
 
