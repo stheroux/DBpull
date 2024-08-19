@@ -1,0 +1,77 @@
+---
+title: "Example Taxize Code"
+output: html_document
+date: "2024-08-19"
+---
+
+
+```{r packages}
+library(readxl)
+library(tidyr)
+library(dplyr)
+library(tidyverse)
+library(readr)
+library(stringr)
+library(clipr)
+library(openxlsx)
+library(fuzzyjoin)
+library(taxize)
+
+```
+
+
+explanation of taxize commands:
+https://cran.r-project.org/web/packages/taxize/taxize.pdf
+
+```{r load in vegetation list and run taxize on it}
+lu_plantspecies <- read_excel("lu_plantspecies.xls")
+
+## run tol and gnr resolvers. Searches online databases and returns typos/synonyms. Will drop some names but will be added later 
+
+veg_tol <- tol_resolve(lu_plantspecies$scientificname, context_name = "All life")
+
+veg_gnr <- gnr_resolve(sci = as.character(lu_plantspecies$scientificname), best_match_only = T, with_canonical_ranks=T)
+
+
+## join to initial species list. Use fuzzyjoin to ignore case 
+
+veg_joined <- lu_plantspecies %>% 
+  regex_left_join(veg_tol, by = c('scientificname' = 'search_string'), ignore_case = T)
+
+
+veg_joined <- veg_joined %>% 
+  regex_left_join(veg_gnr, by = c('scientificname' = 'user_supplied_name'), ignore_case = T)
+
+
+veg_joined <- veg_joined %>% 
+  select(scientificname:cal_ipc_rating, unique_name, score.x, is_synonym, matched_name2, score.y)
+
+veg_joined <- veg_joined %>% 
+  rename("tol_name" = "unique_name",
+         "gnr_name" = "matched_name2")
+
+##set FinalName to original name if tol_resolve found no differences and isn't a synonym 
+veg_joined <- veg_joined %>% 
+  mutate(FinalName = ifelse(score.x == 1 & is_synonym == FALSE, scientificname, NA))
+
+
+## write to csv, manually check changes, and use best judgement to add to FinalName if it looks correct. 
+## Add notes if changes to FinalName was made. 
+
+write.csv(veg_joined, "plantspecies.fixed.csv")
+```
+
+In between step: look at csv file outside of R to manually fill out FinalName(double check tol/gnr spelling mistakes, they're not always correct, especially tol)
+
+```{r finish checking look up list}
+## load changed species list with all FinalName filled
+lu_plantspecies_fixed <- read_csv("plantspecies.fixed2.csv")
+
+## add column to see if name changed for last check. Also change tol_name to synonym to keep synonyms  
+
+lu_plantspecies_fixed <- lu_plantspecies_fixed %>% 
+  mutate(ChangedName = ifelse(scientificname != FinalName, "yes", "no"),
+         tol_name = ifelse(is_synonym == FALSE, NA, tol_name)) %>% 
+  rename("synonym" = "tol_name")
+
+```
